@@ -1,0 +1,211 @@
+[gd_scene load_steps=7 format=3 uid="uid://bi1sxuhn2dvjb"]
+
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_plfes"]
+[ext_resource type="PackedScene" uid="uid://ck7lrmknr1h5v" path="res://units/player.tscn" id="2_fjgm4"]
+[ext_resource type="Texture2D" uid="uid://drhenddx5qcok" path="res://assets/easter eggs/EasterEgg 1_alpha.png" id="3_xi0y0"]
+[ext_resource type="Texture2D" uid="uid://p7nqjwybb3q6" path="res://assets/easter eggs/EasterEgg 2_alpha.png" id="4_18rtd"]
+[ext_resource type="Texture2D" uid="uid://bc5ykrdi1yeo7" path="res://assets/easter eggs/EasterEgg 3_alpha.png" id="5_culme"]
+[ext_resource type="Texture2D" uid="uid://crk72o43khy6m" path="res://assets/easter eggs/EasterEgg 4_alpha.png" id="6_u2kf4"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_plfes")
+
+[node name="Easter Eggs" type="Node" parent="."]
+
+[node name="EasterEgg3Alpha" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(-113, 304)
+texture = ExtResource("5_culme")
+
+[node name="EasterEgg1Alpha" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(-95, 682)
+texture = ExtResource("3_xi0y0")
+
+[node name="EasterEgg2Alpha" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(-145, 503)
+texture = ExtResource("4_18rtd")
+
+[node name="EasterEgg4Alpha" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(-117, 83)
+texture = ExtResource("6_u2kf4")
+
+[node name="EasterEgg1Alpha2" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(-6, -81)
+texture = ExtResource("3_xi0y0")
+
+[node name="EasterEgg2Alpha2" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(175, -74)
+texture = ExtResource("4_18rtd")
+
+[node name="EasterEgg3Alpha2" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(361, -70)
+texture = ExtResource("5_culme")
+
+[node name="EasterEgg4Alpha2" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(574, -81)
+texture = ExtResource("6_u2kf4")
+
+[node name="EasterEgg1Alpha3" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(738, -84)
+texture = ExtResource("3_xi0y0")
+
+[node name="EasterEgg2Alpha3" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(945, -88)
+texture = ExtResource("4_18rtd")
+
+[node name="EasterEgg3Alpha3" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(1134, -88)
+texture = ExtResource("5_culme")
+
+[node name="EasterEgg4Alpha3" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(1255, 8)
+texture = ExtResource("6_u2kf4")
+
+[node name="EasterEgg1Alpha4" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(1280, 172)
+texture = ExtResource("3_xi0y0")
+
+[node name="EasterEgg2Alpha4" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(1276, 329)
+texture = ExtResource("4_18rtd")
+
+[node name="EasterEgg3Alpha4" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(1284, 482)
+texture = ExtResource("5_culme")
+
+[node name="EasterEgg4Alpha4" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(1276, 650)
+texture = ExtResource("6_u2kf4")
+
+[node name="EasterEgg1Alpha5" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(1077, 746)
+texture = ExtResource("3_xi0y0")
+
+[node name="EasterEgg2Alpha5" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(870, 728)
+texture = ExtResource("4_18rtd")
+
+[node name="EasterEgg3Alpha5" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(703, 732)
+texture = ExtResource("5_culme")
+
+[node name="EasterEgg4Alpha5" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(521, 724)
+texture = ExtResource("6_u2kf4")
+
+[node name="EasterEgg1Alpha6" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(339, 724)
+texture = ExtResource("3_xi0y0")
+
+[node name="EasterEgg2Alpha6" type="Sprite2D" parent="Easter Eggs"]
+position = Vector2(118, 717)
+texture = ExtResource("4_18rtd")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_fjgm4")]
+position = Vector2(576, 324)
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="loc" type="Marker2D" parent="."]
+position = Vector2(743, 193)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_right = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_bottom = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer"]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center] Game Jam 69[/center]"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer/MarginContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center]                                                 (void)[/center]"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HostButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = " Start & Host "
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 50
+
+[node name="JoinButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "    Join    "
+
+[node name="Ip_config" type="ConfirmationDialog" parent="."]
+title = "Join"
+initial_position = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Ip_config"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 192.0
+offset_bottom = 51.0
+
+[node name="Label" type="Label" parent="Ip_config/HBoxContainer"]
+layout_mode = 2
+text = "ip: "
+
+[node name="ip" type="LineEdit" parent="Ip_config/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "localhost"
+
+[node name="SecretButton" type="Button" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 668.0
+offset_top = 200.0
+offset_right = 758.0
+offset_bottom = 275.0
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/HostButton" to="." method="_on_host_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/JoinButton" to="." method="_on_join_button_pressed"]
+[connection signal="confirmed" from="Ip_config" to="." method="_on_ip_config_confirmed"]
+[connection signal="pressed" from="SecretButton" to="." method="_on_hidden_button_pressed"]

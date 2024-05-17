@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv3fhp3qraenf"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c6xao"]
+rough = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxobl"]
+size = Vector2(16, 16)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_n53je"]
+properties/0/path = NodePath(".:inertia")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:sleeping")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:linear_velocity")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:position")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath(".:rotation")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+properties/5/path = NodePath(".:angular_velocity")
+properties/5/spawn = true
+properties/5/replication_mode = 1
+
+[node name="RigidBody2D" type="RigidBody2D"]
+collision_layer = 128
+collision_mask = 129
+physics_material_override = SubResource("PhysicsMaterial_c6xao")
+gravity_scale = 0.0
+linear_damp = 5.0
+angular_damp = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rxobl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 32.0
+offset_bottom = 32.0
+scale = Vector2(0.400005, 0.399998)
+color = Color(1, 0.6, 1, 1)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_n53je")

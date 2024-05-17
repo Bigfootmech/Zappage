@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b34alpygnpv2k"]
+
+[ext_resource type="Script" path="res://Scripts/nice_text_appear.gd" id="1_j0j55"]
+
+[node name="nice" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "nice"
+script = ExtResource("1_j0j55")

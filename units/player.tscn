@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://ck7lrmknr1h5v"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_jtsg8"]
+[ext_resource type="Script" path="res://Scripts/Player_Input.gd" id="2_ilhva"]
+[ext_resource type="Script" path="res://Scripts/Ray.gd" id="3_jotat"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_vsta6"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("GUN/RayCast2D/Shoot_Effects:points")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("GUN/RayCast2D/Shoot_Effects:visible")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath(".:player_id")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_p2nnq"]
+properties/0/path = NodePath("Player_Input:movedir")
+properties/0/spawn = false
+properties/0/replication_mode = 1
+properties/1/path = NodePath("Player_Input:lookat")
+properties/1/spawn = false
+properties/1/replication_mode = 1
+properties/2/path = NodePath("Player_Input:shooting")
+properties/2/spawn = false
+properties/2/replication_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmt4q"]
+size = Vector2(20, 17)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_jtsg8")
+
+[node name="Spatial_Sync" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_vsta6")
+
+[node name="Player_Input" type="MultiplayerSynchronizer" parent="."]
+unique_name_in_owner = true
+replication_config = SubResource("SceneReplicationConfig_p2nnq")
+script = ExtResource("2_ilhva")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_xmt4q")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Button" type="Button" parent="."]
+offset_left = -10.0
+offset_top = -9.0
+offset_right = 10.0
+offset_bottom = 8.0
+
+[node name="GUN" type="Node2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="GUN"]
+unique_name_in_owner = true
+target_position = Vector2(40, 0)
+collision_mask = 128
+script = ExtResource("3_jotat")
+
+[node name="Shoot_Effects" type="Line2D" parent="GUN/RayCast2D"]
+unique_name_in_owner = true
+visible = false
+points = PackedVector2Array(0, 5, 40, 0, 0, -5)
+default_color = Color(0.117647, 0.384314, 1, 0.686275)

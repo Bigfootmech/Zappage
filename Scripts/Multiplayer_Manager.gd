@@ -28,8 +28,8 @@ func connect_to_ip_as_client(IP_ADDRESS, port = SERVER_PORT_COPY_STEAM):
 	#var peer = WebRTCMultiplayerPeer.new()
 	var err = peer.create_client(IP_ADDRESS, port)
 	
-	print(err)
-	print(peer.get_connection_status())
+	#print(err)
+	#print(peer.get_connection_status())
 	
 	multiplayer.multiplayer_peer = peer
 	
